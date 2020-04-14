@@ -1,1 +1,2 @@
-# STV_Geo_Project
+[![pipeline status](https://stv.csie.ntut.edu.tw/108598014/GeoProject/badges/master/pipeline.svg)](https://stv.csie.ntut.edu.tw/108598014/GeoProject/commits/master)
+[![coverage report](https://stv.csie.ntut.edu.tw/108598014/GeoProject/badges/master/coverage.svg)](https://stv.csie.ntut.edu.tw/108598014/GeoProject/commits/master)
