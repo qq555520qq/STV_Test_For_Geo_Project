@@ -5,9 +5,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.lang.Double;
-import java.lang.Long;
-import java.util.HashSet;
-import java.util.Set;
 
 import static org.junit.Assert.*;
 

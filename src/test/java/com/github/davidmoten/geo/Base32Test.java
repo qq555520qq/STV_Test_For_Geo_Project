@@ -65,6 +65,24 @@ public class Base32Test {
     }
 
     @Test
+    public void encodeBase32WithNegativeLongGraph() throws Exception {
+        String encode = Base32.encodeBase32(-1,5);
+        assertEquals("-00001", encode);
+    }
+
+    @Test
+    public void encodeBase32WithBiggerNegativeLongGraph() throws Exception {
+        String encode = Base32.encodeBase32(-64,5);
+        assertEquals("-00020", encode);
+    }
+
+    @Test
+    public void encodeBase32WithPositiveLongGraph() throws Exception {
+        String encode = Base32.encodeBase32(32,5);
+        assertEquals("00010", encode);
+    }
+
+    @Test
     public void decodeBase32WithPositiveHash() throws Exception {
         long decode = Base32.decodeBase32("7zzzzzzzzzzzz");
         assertEquals(9223372036854775807L, decode);
@@ -79,5 +97,29 @@ public class Base32Test {
     @Test(expected = IllegalArgumentException.class)
     public void decodeBase32WithInvalidCharacter() throws Exception {
             long decode = Base32.decodeBase32("-037a4ry");
+    }
+
+    @Test
+    public void decodeBase32WithEmptyHash() throws Exception {
+        long decode = Base32.decodeBase32("");
+        assertEquals(0, decode);
+    }
+
+    @Test
+    public void decodeBase32WithNegativeEmptyHash() throws Exception {
+        long decode = Base32.decodeBase32("-");
+        assertEquals(0, decode);
+    }
+
+    @Test
+    public void decodeBase32WithPositiveHashGraph() throws Exception {
+        long decode = Base32.decodeBase32("1");
+        assertEquals(1, decode);
+    }
+
+    @Test
+    public void decodeBase32WithNegativeHashGraph() throws Exception {
+        long decode = Base32.decodeBase32("-1");
+        assertEquals(-1, decode);
     }
 }

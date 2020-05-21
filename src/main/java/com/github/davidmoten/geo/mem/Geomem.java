@@ -216,7 +216,7 @@ public class Geomem<T, R> {
      */
     public void add(Info<T, R> info) {
         String hash = GeoHash.encodeHash(info.lat(), info.lon());
-
+        
         addToMap(mapByGeoHash, info, hash);
         addToMapById(mapById, info, hash);
     }
