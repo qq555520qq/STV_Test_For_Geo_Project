@@ -1,0 +1,10 @@
+ keystonejs:
+   image: ntutselab/keystonejs
+   ports:
+    - "3000:3000"
+   links:
+    - mongodb
+ mongodb:
+   image: mongo
+   ports:
+    - "27017:27017"
